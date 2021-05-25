@@ -24,4 +24,8 @@ public class Point {
     public void setY(int y) {
         this.y = y;
     }
+
+    public double range (Point p, Point q) {
+        return Math.sqrt(Math.pow((p.getX()-q.getX()), 2) + Math.pow((p.getY()-q.getY()), 2));
+    }
 }
