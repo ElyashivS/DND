@@ -16,7 +16,7 @@ public class Warrior extends Player {
     public void levelUp() {
         super.levelUp();
         remainingCooldown = 0;
-        health.setHealthPool(5 * getLevel());
+        health.setHealthPool(health.getHealthPool() + (5 * getLevel()));
         setAttackPts(getAttackPts() + (2 * getLevel()));
         setDefensePts(getDefensePts() + getLevel());
     }

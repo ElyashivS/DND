@@ -19,10 +19,10 @@ public abstract class Player extends Unit {
 
     public void levelUp() {
         exp -= (50 * level);
-        level ++;
-        health.setHealthPool(health.getHealthPool() + (10 * level));
+        level++;
+        health.setHealthPool(health.getHealthPool() + (10 * getLevel()));
         health.setHealthAmount(health.getHealthPool());
-        attackPts += 4 * level;
-        defensePts += level;
+        setAttackPts(getAttackPts() + (4 * getLevel()));
+        setDefensePts(getDefensePts() + getLevel());
     }
 }

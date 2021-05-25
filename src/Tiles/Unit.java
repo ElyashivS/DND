@@ -1,11 +1,10 @@
 package Tiles;
 
-public abstract class Unit extends Tile { // TODO Try to make those private, and use getters and setters to initialize
-                             //  method levelUp() in class Player
+public abstract class Unit extends Tile {
     protected String name;
     protected Health health;
-    protected int attackPts;
-    protected int defensePts;
+    private int attackPts;
+    private int defensePts;
 
     public Unit(String name, Health health, int attackPts, int defensePts) {
         this.name = name;
