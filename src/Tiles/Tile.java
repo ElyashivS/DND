@@ -3,6 +3,11 @@ package Tiles;
 import Board.Point;
 
 public abstract class Tile {
-    private char tile;
-    private Point position;
+    protected char tile;
+    protected Point position;
+
+    public Tile(char tile, Point position) {
+        this.tile = tile;
+        this.position = position;
+    }
 }

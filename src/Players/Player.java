@@ -1,5 +1,6 @@
 package Players;
 
+import Board.Point;
 import Tiles.Health;
 import Tiles.Unit;
 
@@ -7,8 +8,9 @@ public abstract class Player extends Unit {
     private int exp = 0;
     private int level = 1;
 
-    public Player(String name, Health health, int attackPts, int defensePts, int exp, int level) {
-        super(name, health, attackPts, defensePts);
+
+    public Player(char tile, Point position, String name, Health health, int attackPts, int defensePts, int exp, int level) {
+        super('@', position, name, health, attackPts, defensePts);
         this.exp = exp;
         this.level = level;
     }
