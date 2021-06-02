@@ -1,16 +1,23 @@
 package Tiles;
 
+import Board.Point;
+
 public abstract class Unit extends Tile {
     protected String name;
     protected Health health;
     private int attackPts;
     private int defensePts;
 
-    public Unit(String name, Health health, int attackPts, int defensePts) {
+    public Unit(char tile, Point position, String name, Health health, int attackPts, int defensePts) {
+        super(tile, position);
         this.name = name;
         this.health = health;
         this.attackPts = attackPts;
         this.defensePts = defensePts;
+    }
+
+    public Health getHealth() {
+        return health;
     }
 
     public int getAttackPts() {
@@ -27,5 +34,9 @@ public abstract class Unit extends Tile {
 
     public void setDefensePts(int defensePts) {
         this.defensePts = defensePts;
+    }
+
+    public boolean isAlive() {
+        return getHealth().getHealthAmount() > 0;
     }
 }
