@@ -27,4 +27,30 @@ public abstract class Player extends Unit {
         setAttackPts(getAttackPts() + (4 * getLevel()));
         setDefensePts(getDefensePts() + getLevel());
     }
+
+    public void act(char action) {
+        if (action == 'w')
+            moveUp();
+        if (action == 's')
+            moveDown();
+        if (action == 'd')
+            moveRight();
+        if (action == 'a')
+            moveLeft();
+//        if (action == 'e')
+//            // TODO castAbility();
+    }
+
+    private void moveUp() {
+        Point moved = new Point(position.getX(), position.getY() + 1);
+    }
+    private void moveDown() {
+        Point moved = new Point(position.getX(), position.getY() - 1);
+    }
+    private void moveRight() {
+        Point moved = new Point(position.getX() + 1, position.getY());
+    }
+    private void moveLeft() {
+        Point moved = new Point(position.getX() - 1, position.getY());
+    }
 }
